@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ishowshao/icloud-cli/issues"
   },
-  "homepage": "https://github.com/ishowshao/icloud-cli#readme"
+  "homepage": "https://github.com/ishowshao/icloud-cli#readme",
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
 }
