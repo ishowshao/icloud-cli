@@ -9,9 +9,11 @@ const { program } = require('commander');
 program.version('1.0.0');
 
 program
-    .option('-s, --save', '存储: 文件名为 ${name}.${md5}.${ext}')
-    .option('-a, --archive', '归档存储: 文件名为 ${md5}.${ext}')
-    .option('-u, --uuid', '归档存储: 文件名为 ${uuid}.${ext}')
+    .option('-a, --archive', '归档: 文件名为 ${md5}.${ext} 默认值')
+    .option('-s, --save', '归档: 文件名为 ${name}.${md5}.${ext}')
+    .option('-u, --uuid', '归档: 文件名为 ${uuid}.${ext}')
+    .option('-r, --dir', '存储目录下所有文件')
+    .option('-g, --glob', '<filepath> 当做glob pattern处理')
     .option('-k, --keep', '保留原文件');
 
 program
