@@ -9,10 +9,18 @@ const { program } = require('commander');
 program.version('1.0.0');
 
 program
-    .option('-s, --save <path>', '存储: 文件名为 ${name}.${md5}.${ext}')
-    .option('-a, --archive <path>', '归档存储: 文件名为 ${md5}.${ext}')
-    .option('-u, --uuid <path>', '归档存储: 文件名为 ${uuid}.${ext}');
+    .option('-s, --save', '存储: 文件名为 ${name}.${md5}.${ext}')
+    .option('-a, --archive', '归档存储: 文件名为 ${md5}.${ext}')
+    .option('-u, --uuid', '归档存储: 文件名为 ${uuid}.${ext}');
 
+program
+    .argument('<filepath>', '需要存储的文件路径')
+    .description('文件存储到iCloud')
+    .action((source, destination) => {
+        console.log(source, 'clone command called');
+        const options = program.opts();
+        console.log(options);
+    });
 program.parse(process.argv);
 
 const options = program.opts();
