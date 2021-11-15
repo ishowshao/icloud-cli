@@ -1,0 +1,23 @@
+{
+  "name": "icloud-cli",
+  "version": "1.0.0",
+  "description": "My special usage of icloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishowshao/icloud-cli.git"
+  },
+  "keywords": [
+    "iCloud",
+    "cli"
+  ],
+  "author": "ishowshao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishowshao/icloud-cli/issues"
+  },
+  "homepage": "https://github.com/ishowshao/icloud-cli#readme"
+}
