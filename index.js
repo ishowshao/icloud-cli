@@ -11,11 +11,12 @@ program.version('1.0.0');
 program
     .option('-s, --save', '存储: 文件名为 ${name}.${md5}.${ext}')
     .option('-a, --archive', '归档存储: 文件名为 ${md5}.${ext}')
-    .option('-u, --uuid', '归档存储: 文件名为 ${uuid}.${ext}');
+    .option('-u, --uuid', '归档存储: 文件名为 ${uuid}.${ext}')
+    .option('-k, --keep', '保留原文件');
 
 program
-    .argument('<filepath>', '需要存储的文件路径')
-    .description('文件存储到iCloud')
+    .argument('<filepath>', '需要存储的文件路径 [绝对路径, 相对路径, glob]')
+    .description('文件存储到iCloud，直接移动文件，原文件被删除')
     .action((source, destination) => {
         console.log(source, 'clone command called');
         const options = program.opts();
