@@ -19,16 +19,23 @@ program
 program
     .argument('<filepath>', '需要存储的文件路径 [绝对路径, 相对路径, glob]')
     .description('文件存储到iCloud，直接移动文件，原文件被删除')
-    .action((source, destination) => {
-        console.log(source, 'clone command called');
+    .action((filepath) => {
+        console.log(filepath);
         const options = program.opts();
         console.log(options);
+        if (options.save) {
+
+        }
     });
 program.parse(process.argv);
 
 const options = program.opts();
 if (options.save) {
     save(options.save);
+}
+
+async function archive() {
+
 }
 
 async function save(filepath) {
@@ -48,4 +55,8 @@ async function save(filepath) {
     const md5 = await md5file(filepath);
 
     await copyFile(filepath, `${HOMEDIR}/Library/Mobile\ Documents/com~apple~CloudDocs/icloud-cli/${pathObject.name}.${md5}.${ext}`);
+}
+
+async function uuid() {
+    
 }
